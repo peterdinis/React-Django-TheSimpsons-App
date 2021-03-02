@@ -3,20 +3,31 @@ import { gql, useMutation } from "@apollo/client";
 import "./CreateCharacter.css";
 
 const CREATE_CHARACTER = gql`
-  mutation createCharacter($num: Int!, $name: String!, $description: String!) {
-    createCharacter(num: $num, name: $name, description: $description) {
+  mutation createCharacter(
+    $num: Int!
+    $name: String!
+    $description: String!
+    $image: String!
+  ) {
+    createCharacter(
+      num: $num
+      name: $name
+      description: $description
+      image: $image
+    ) {
       character {
         num
         name
         description
+        image
       }
     }
   }
 `;
 
 function CreateCharacter() {
-  let numInput, nameInput, descriptionInput;
-  const [createCharacter, { data }] = useMutation(CREATE_CHARACTER);
+  let numInput, nameInput, descriptionInput, imageInput;
+  const [createCharacter] = useMutation(CREATE_CHARACTER);
 
   const onNewCharacterSubmit = (e) => {
     e.preventDefault();
@@ -25,12 +36,14 @@ function CreateCharacter() {
         num: numInput.value,
         name: nameInput.value,
         description: descriptionInput.value,
+        image: imageInput.value,
       },
     });
 
     numInput.value = "";
     nameInput.value = "";
     descriptionInput.value = "";
+    imageInput.value = "";
   };
 
   return (
@@ -64,7 +77,18 @@ function CreateCharacter() {
           }}
         />{" "}
         <br />
-        <button className='form__button' type="submit">Add New Simpson Character</button>
+        <input
+          className="form__input"
+          placeholder="Character image"
+          type="text"
+          ref={(imageNode) => {
+            imageInput = imageNode;
+          }}
+        />{" "}
+        <br />
+        <button className="form__button" type="submit">
+          Add New Simpson Character
+        </button>
       </form>
     </div>
   );

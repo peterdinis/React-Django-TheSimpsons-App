@@ -1,0 +1,20 @@
+.our__characters {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid #eee;
+    width: 50%;
+    margin-top: 3rem;
+    margin-left: 30rem;
+}
+
+.character__image {
+    width: 40%;
+}
+
+.character__description {
+    font-size: 1.2rem;
+}
+
+.character__number {
+    margin-left: 0.3rem;
+}

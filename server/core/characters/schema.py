@@ -9,7 +9,8 @@ class CharacterType(DjangoObjectType):
         fields = (
             "num",
             "name",
-            "description"
+            "description",
+            "image"
         )
 
 class Query(graphene.ObjectType):
@@ -28,11 +29,12 @@ class CreateCharacter(graphene.Mutation):
         num = graphene.Int()
         name = graphene.String()
         description = graphene.String()
+        image = graphene.String()
 
     character = graphene.Field(CharacterType)
 
-    def mutate(self, info, name, description, num):
-        character = Character.objects.create(num=num, name=name, description=description)
+    def mutate(self, info, name, description, image, num):
+        character = Character.objects.create(num=num, name=name, description=description, image=image)
         character.save()
         return CreateCharacter(character=character)
 
