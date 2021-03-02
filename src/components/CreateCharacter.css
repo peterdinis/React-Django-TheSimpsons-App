@@ -1,0 +1,29 @@
+.form__helper {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.form__header {
+    margin-top: 1rem;
+    text-shadow: 1px 1px 1px #70D1FE;
+}
+
+.form__input {
+    width: 30%;
+  border: none;
+  border-bottom: 1px solid #333333;
+  margin-top: 1rem;
+  outline: none;
+    
+}
+
+.form__button {
+    margin-top: 3rem;
+    background-color: #70D1FE;
+    color: #eeeeee;
+    border-radius: 10px;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+    padding: 3px;
+    font-size: 1.2rem;
+}
