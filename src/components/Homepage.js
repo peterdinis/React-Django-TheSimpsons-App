@@ -5,7 +5,7 @@ function Homepage() {
     return (
         <div className='home'>
             <h1 className='header'>The Simpsons DB</h1>
-            <p className='subheader'>Find or create character</p>
+            <p className='subheader'>Find or create the simpsons character</p>
             <div className='btns'>
                 <button className='all-button'>
                     <a className='all-link-button' href='/all'>All Characters</a>

@@ -1,5 +1,7 @@
 import React from "react";
 import { gql, useMutation } from "@apollo/client";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./CreateCharacter.css";
 
 const CREATE_CHARACTER = gql`
@@ -25,6 +27,8 @@ const CREATE_CHARACTER = gql`
   }
 `;
 
+const notify = () => toast.success("Postava bola úspešne vytvorená");
+
 function CreateCharacter() {
   let numInput, nameInput, descriptionInput, imageInput;
   const [createCharacter] = useMutation(CREATE_CHARACTER);
@@ -39,6 +43,8 @@ function CreateCharacter() {
         image: imageInput.value,
       },
     });
+
+    notify();
 
     numInput.value = "";
     nameInput.value = "";
@@ -90,6 +96,7 @@ function CreateCharacter() {
           Add New Simpson Character
         </button>
       </form>
+      <ToastContainer />
     </div>
   );
 }
