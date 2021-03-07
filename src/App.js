@@ -9,7 +9,6 @@ function App() {
   return (
     <div className="App">
         <Navbar />
-        <h1 className="title">The Simpsons Characters</h1>
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route exact path='/all' component={AllCharacters} />
