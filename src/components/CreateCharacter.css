@@ -27,3 +27,11 @@
     padding: 3px;
     font-size: 1.2rem;
 }
+
+.form__info {
+    margin-top: 4rem;
+}
+
+.form__info h3 {
+    color: red;
+}

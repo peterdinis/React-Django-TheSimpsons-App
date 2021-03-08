@@ -97,6 +97,11 @@ function CreateCharacter() {
         </button>
       </form>
       <ToastContainer />
+      <div className='form__info'>
+        <h3>
+          All Fields in form are required
+        </h3>
+      </div>
     </div>
   );
 }
